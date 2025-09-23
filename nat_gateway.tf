@@ -9,7 +9,7 @@ module "nat_gateway" {
   location            = azurerm_resource_group.network.location
   tags                = var.tags
 
-  
+
   // TODO: Make FW assoc conditional on creation of FW
   subnet_associations = {
     # "${local.subnet_names.azure_firewall}" = {
