@@ -186,7 +186,7 @@ module "nsg_domain_controller_subnet" {
   source  = "Azure/avm-res-network-networksecuritygroup/azurerm"
   version = "~> 0.5.0"
 
-  name                = local.resource_names["network_security_group_name_domain_controller"]
+  name                = local.resource_names["network_security_group_domain_controller"]
   resource_group_name = azurerm_resource_group.network.name
   location            = azurerm_resource_group.network.location
 

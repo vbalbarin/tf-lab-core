@@ -57,7 +57,7 @@ module "virtualnetwork" {
 
   // DO NOT SET DNS IPs HERE
 
-  name                = local.resource_names["virtual_network_name"]
+  name                = local.resource_names["virtual_network"]
   resource_group_name = azurerm_resource_group.network.name
   location            = azurerm_resource_group.network.location
 
