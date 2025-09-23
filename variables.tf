@@ -79,22 +79,25 @@ variable "resource_name_templates" {
   type        = map(string)
   description = "A map of resource names to use"
   default = {
-    resource_group_state       = "rg-$${workload}-tfstate-$${environment}-$${location_short}-$${sequence}"
-    storage_account            = "sto$${workload}$${environment}$${location_short}$${sequence}$${uniqueness}"
-    resource_group_identity    = "rg-$${workload}-identity-$${environment}-$${location_short}-$${sequence}"
-    resource_group_network     = "rg-$${workload}-network-$${environment}-$${location_short}-$${sequence}"
+    resource_group_state             = "rg-$${workload}-tfstate-$${environment}-$${location_short}-$${sequence}"
+    storage_account                  = "sto$${workload}$${environment}$${location_short}$${sequence}$${uniqueness}"
+    resource_group_identity          = "rg-$${workload}-identity-$${environment}-$${location_short}-$${sequence}"
+    resource_group_network           = "rg-$${workload}-network-$${environment}-$${location_short}-$${sequence}"
+    resource_group_domain_controller = "rg-$${workload}-dc-$${environment}-$${location_short}-$${sequence}"
+    resource_group_domain_member     = "rg-$${workload}-dm-$${environment}-$${location_short}-$${sequence}"
+
     user_assigned_managed_identity = "umi-$${workload}-$${environment}-$${location_short}-$${sequence}"
 
     # resource_group_agents             = "rg-$${workload}-agents-$${environment}-$${location_short}-$${sequence}"
-    virtual_network  = "vnet-$${workload}-$${environment}-$${location_short}-$${sequence}"
+    virtual_network = "vnet-$${workload}-$${environment}-$${location_short}-$${sequence}"
 
     network_security_group_domain_controller = "nsg-$${workload}-dc-$${environment}-$${location_short}-$${sequence}"
     network_security_group_domain_member     = "nsg-$${workload}-dm-$${environment}-$${location_short}-$${sequence}"
 
-    bastion                = "bastion-$${workload}-$${environment}-$${location_short}-$${sequence}"
-    bastion_public_ip      = "pip-bastion-$${workload}-$${environment}-$${location_short}-$${sequence}"
-    nat_gateway            = "nat-$${workload}-$${environment}-$${location_short}-$${sequence}"
-    nat_gateway_public_ip  = "pip-nat-$${workload}-$${environment}-$${location_short}-$${sequence}"
+    bastion               = "bastion-$${workload}-$${environment}-$${location_short}-$${sequence}"
+    bastion_public_ip     = "pip-bastion-$${workload}-$${environment}-$${location_short}-$${sequence}"
+    nat_gateway           = "nat-$${workload}-$${environment}-$${location_short}-$${sequence}"
+    nat_gateway_public_ip = "pip-nat-$${workload}-$${environment}-$${location_short}-$${sequence}"
     # storage_account_private_endpoint  = "pe-sto-$${workload}-$${environment}-$${location_short}-$${sequence}"
     # agent_compute_postfix             = "$${workload}-$${environment}-$${location_short}-$${sequence}"
     # container_instance_prefix         = "aci-$${workload}-$${environment}-$${location_short}"
