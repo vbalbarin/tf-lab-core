@@ -125,6 +125,11 @@ variable "deploy_natgw" {
   default = true
 }
 
+variable "remote_access_ip" {
+  type    = string
+  default = ""
+}
+
 variable "telemetry_enabled" {
   default = false
   type    = bool

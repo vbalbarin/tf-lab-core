@@ -16,4 +16,6 @@ locals {
   }
 
   resource_names = { for key, value in var.resource_name_templates : key => templatestring(value, local.name_replacements) }
+
+  paas_firewall_allowed_ip = length(var.remote_access_ip) > 0 ? [var.remote_access_ip] : [data.http.runner_ip[0].response_body]
 }
