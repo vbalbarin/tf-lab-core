@@ -94,6 +94,12 @@ module "virtualnetwork" {
       network_security_group = {
         id = module.nsg_domain_controller_subnet.resource.id
       }
+      nat_gateway = var.deploy_natgw ? {
+        id = module.nat_gateway[0].resource_id
+      } : {}
+      # route_table = var.deploy_firewall ? {
+      #   id = module.rt[0].resource_id
+      # } : {}
     }
     "${local.subnet_names.domain_member}" = {
       name             = local.subnet_names.domain_member
@@ -101,6 +107,12 @@ module "virtualnetwork" {
       network_security_group = {
         id = module.nsg_domain_member_subnet.resource.id
       }
+      nat_gateway = var.deploy_natgw ? {
+        id = module.nat_gateway[0].resource_id
+      } : {}
+      # route_table = var.deploy_firewall ? {
+      #   id = module.rt[0].resource_id
+      # } : {}
       service_endpoints = ["Microsoft.Storage", "Microsoft.KeyVault"]
     }
   }
