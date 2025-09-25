@@ -18,3 +18,10 @@ resource "azurerm_resource_group" "domain_member" {
 
   tags = var.tags
 }
+
+resource "azurerm_resource_group" "support" {
+  name     = local.resource_names["resource_group_support"]
+  location = var.location
+
+  tags = var.tags
+}

@@ -98,6 +98,9 @@ variable "resource_name_templates" {
     bastion_public_ip     = "pip-bastion-$${workload}-$${environment}-$${location_short}-$${sequence}"
     nat_gateway           = "nat-$${workload}-$${environment}-$${location_short}-$${sequence}"
     nat_gateway_public_ip = "pip-nat-$${workload}-$${environment}-$${location_short}-$${sequence}"
+
+    resource_group_support = "rg-$${workload}-support-$${environment}-$${location_short}-$${sequence}"
+    key_vault              = "kv-$${workload}-$${environment}-$${location_short}-$${sequence}"
     # storage_account_private_endpoint  = "pe-sto-$${workload}-$${environment}-$${location_short}-$${sequence}"
     # agent_compute_postfix             = "$${workload}-$${environment}-$${location_short}-$${sequence}"
     # container_instance_prefix         = "aci-$${workload}-$${environment}-$${location_short}"
@@ -128,6 +131,16 @@ variable "deploy_natgw" {
 variable "remote_access_ip" {
   type    = string
   default = ""
+}
+
+variable "deploy_dc" {
+  type    = bool
+  default = false
+}
+
+variable "deploy_dm" {
+  type    = bool
+  default = false
 }
 
 variable "telemetry_enabled" {

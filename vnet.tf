@@ -101,6 +101,7 @@ module "virtualnetwork" {
       network_security_group = {
         id = module.nsg_domain_member_subnet.resource.id
       }
+      service_endpoints = ["Microsoft.Storage", "Microsoft.KeyVault"]
     }
   }
 
