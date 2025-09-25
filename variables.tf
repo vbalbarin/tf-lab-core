@@ -101,6 +101,8 @@ variable "resource_name_templates" {
 
     resource_group_support = "rg-$${workload}-support-$${environment}-$${location_short}-$${sequence}"
     key_vault              = "kv-$${workload}-$${environment}-$${location_short}-$${sequence}"
+
+    vm_domain_controller = "dc-$${workload}-$${environment}-$${sequence}"
     # storage_account_private_endpoint  = "pe-sto-$${workload}-$${environment}-$${location_short}-$${sequence}"
     # agent_compute_postfix             = "$${workload}-$${environment}-$${location_short}-$${sequence}"
     # container_instance_prefix         = "aci-$${workload}-$${environment}-$${location_short}"
