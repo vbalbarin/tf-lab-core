@@ -10,18 +10,6 @@ module "nat_gateway" {
   tags                = var.tags
 
 
-  // TODO: Make FW assoc conditional on creation of FW
-  subnet_associations = {
-    # "${local.subnet_names.azure_firewall}" = {
-    #   resource_id = module.virtualnetwork.subnets[local.subnet_names.azure_firewall].resource_id
-    # }
-    "${local.subnet_names.domain_member}" = {
-      resource_id = module.virtualnetwork.subnets[local.subnet_names.domain_member].resource_id
-    }
-    "${local.subnet_names.domain_controller}" = {
-      resource_id = module.virtualnetwork.subnets[local.subnet_names.domain_controller].resource_id
-    }
-  }
 
   public_ip_configuration = {
     allocation_method = "Static"
