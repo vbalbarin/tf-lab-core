@@ -103,6 +103,7 @@ variable "resource_name_templates" {
     key_vault              = "kv-$${workload}-$${environment}-$${location_short}-$${sequence}"
 
     vm_domain_controller = "dc-$${workload}-$${environment}-$${sequence}"
+    vm_domain_member     = "dm-$${workload}-$${environment}-$${sequence}"
     # storage_account_private_endpoint  = "pe-sto-$${workload}-$${environment}-$${location_short}-$${sequence}"
     # agent_compute_postfix             = "$${workload}-$${environment}-$${location_short}-$${sequence}"
     # container_instance_prefix         = "aci-$${workload}-$${environment}-$${location_short}"
@@ -143,6 +144,21 @@ variable "deploy_dc" {
 variable "deploy_dm" {
   type    = bool
   default = false
+}
+
+variable "domain_name" {
+  type    = string
+  default = "sandbox.local"
+}
+
+variable "domain_netbios_name" {
+  type    = string
+  default = "SANDBOX"
+}
+
+variable "vm_dc_sku" {
+  type    = string
+  default = "Standard_D2ads_v6"
 }
 
 variable "telemetry_enabled" {
